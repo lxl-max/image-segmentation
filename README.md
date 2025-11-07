@@ -13,10 +13,11 @@ Using these algorithums, user can select a Region of Interest (ROI) or multiple 
 Install with `pip install numpy matplotlib opencv-contrib-python`
 
 ## How to run the code 
-1. input the path of image (manually)
-2. run
-3. choose ROIs, enter "space" to confirm, enter "Esc" to exit
-4. get results
+1. Download sample from ``data/``
+2. Input the path of image (manually)
+3. Run
+4. Choose ROIs, enter "space" to confirm, enter "Esc" to exit
+5. Get results
 
 ## Example screenshoots or figures 
 Using K-Means Algorithum as an example: 
