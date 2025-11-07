@@ -6,7 +6,7 @@ ROI Selection and Classical Image Segmentation with Comparative Analysis
 Mu Li
 ## What the project does
 Implement four classical segmentation algorithums: Otsu Thresholding, K-Means Algorithum, Contour Detection, and Watershed Algorithum. 
-Using these algorithums, user can select a Region of Interest (ROI) or multiple ROIs of a sample image by drawing a rectangle (or polygon) with the mouse on the image. 
+Using these algorithums, user can select a Region of Interest (ROI) or multiple ROIs of a sample image by drawing a rectangle with the mouse on the image. 
 
 
 ## How to install requirements 
