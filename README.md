@@ -10,10 +10,13 @@ Using these algorithums, user can select a Region of Interest (ROI) or multiple 
 
 
 ## How to install requirements 
-Install with 'pip install numpy matplotlib opencv-contrib-python' 
+Install with `pip install numpy matplotlib opencv-contrib-python`
 
 ## How to run the code 
-
+1. input the path of image (manually)
+2. run
+3. choose ROIs, enter "space" to confirm, enter "Esc" to exit
+4. get results
 
 ## Example screenshoots or figures 
 
