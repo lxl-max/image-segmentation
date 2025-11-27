@@ -52,7 +52,7 @@ The project includes several classical segmentation methods, such as:
 ---
 ### 1. Otsu Thresholding
 
-> The algorithm looks at all pixel intensities and tries to find one “best” brightness threshold that separates foreground and background.
+> We extract the brightness values of every pixel in an image, then plot a histogram. and tries to find one “best” brightness threshold that separates foreground and background.
 
 - Pixels **brighter** than the threshold → foreground
 - Pixels **darker** than the threshold → background
@@ -60,18 +60,13 @@ The project includes several classical segmentation methods, such as:
 **Strengths**
 
 - Very simple and fast
-- Works well when the image histogram has two clear peaks (e.g. dark background + bright object)
+- Works well when the sample consists of a single object and background
 
 **Weaknesses**
 
-- Foreground and background intensities overlap a lot
-- Lighting is uneven across the image
-
-**Good for**
-
-- Simple black-and-white objects
-- Images with clear contrast (e.g. documents, certain biological images)
-
+- Works poor when the sample consists of two or more objects because of relying on brightness only
+- Only suitable for gray scale image
+- Easily affected by lighting
 
 ---
 
@@ -83,25 +78,17 @@ You choose the number of clusters **K** (e.g. 2, 3, 4…).
 
 **Strengths**
 
-- Can handle **multiple regions**, not just foreground vs background
+- Can handle sample with multiple objects
 - Works well for color images where different regions have different colors
 
 **Weaknesses**
 
 - You must choose K manually
-- Sensitive to initialization and noise
-- Does not directly use spatial information (each pixel is clustered independently)
-
-**Good for**
-
-- Color images with a few dominant regions
-- Quick, unsupervised segmentation for exploration
-
+- Focus on a single pixel, regardless of its neighbours, may lead to some errors
 
 ---
 
 ### 3. Contour Detection
-
 
 > First detect “edges” where the image intensity changes quickly, then connect these edges into contours.
 
