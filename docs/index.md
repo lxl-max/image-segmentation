@@ -32,11 +32,8 @@ Recommended reading order:
 2.  [UI & Controls](ui-guide.md)  
    Learn how to select ROIs, confirm them, and exit the program.
 
-3.  [Algorithms (Plain-English Overview)](algorithms.md)  
+3.  [Algorithms](algorithms.md)  
    Intuition only: what each method is roughly doing and when it works well.
-
-4.  [Advanced: Theory & Details](advanced.md)  
-   Optional: more formulas, derivations, and technical comparisons.
 
 ---
 
