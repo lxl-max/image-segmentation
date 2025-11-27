@@ -1,4 +1,4 @@
-# Image Segmentation – Documentation Home
+# Image Segmentation
 
 Welcome to the **ROI Selection and Classical Image Segmentation** project 
 
