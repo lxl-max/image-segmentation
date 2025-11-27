@@ -52,5 +52,3 @@ If you just want to **play with the demo**, you only need to:
 2. Run the entry script  
 3. Use your mouse to draw a ROI, press **Space** to confirm, **Esc** to exit  
 
-> For step-by-step instructions, see: [Quick Start](quickstart.md)
-
