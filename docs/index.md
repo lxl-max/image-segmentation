@@ -127,8 +127,7 @@ Often built on edge detectors (like Canny) plus contour finding.
 ### 4. Watershed Segmentation
 
 
-> Imagine the grayscale image as a landscape:  
-> bright areas are “mountains”, dark areas are “valleys”.  
+> Imagine the grayscale image as a landscape: bright areas are “mountains”, dark areas are “valleys”.  
 > If you slowly “flood” this landscape with water, the lines where water from different valleys meet become the segmentation boundaries.
 
 **Strengths**
