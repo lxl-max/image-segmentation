@@ -28,3 +28,7 @@ pip install -r requirements.txt
 
 # Option B: minimal install (adjust if needed)
 # pip install numpy matplotlib opencv-contrib-python
+
+---
+
+## 3. Clone the repository and install dependencies
