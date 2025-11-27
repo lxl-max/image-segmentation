@@ -60,14 +60,12 @@ The project includes several classical segmentation methods, such as:
 **Strengths**
 
 - Very simple and fast
-- Works well when the image histogram has two clear peaks  
-  (e.g. dark background + bright object)
+- Works well when the image histogram has two clear peaks (e.g. dark background + bright object)
 
 **Weaknesses**
 
-- Struggles when:
-  - foreground and background intensities overlap a lot
-  - lighting is very uneven across the image
+- Foreground and background intensities overlap a lot
+- Lighting is uneven across the image
 
 **Good for**
 
@@ -105,8 +103,7 @@ You choose the number of clusters **K** (e.g. 2, 3, 4…).
 ### 3. Contour Detection
 
 
-> First detect “edges” where the image intensity changes quickly,  
-> then connect these edges into contours.
+> First detect “edges” where the image intensity changes quickly, then connect these edges into contours.
 
 Often built on edge detectors (like Canny) plus contour finding.
 
