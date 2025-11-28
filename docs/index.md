@@ -84,7 +84,7 @@ You choose the number of clusters **K** (e.g. 2, 3, 4…).
 **Weaknesses**
 
 - You must choose K manually
-- Focus on a single pixel, regardless of its neighbours, may lead to some errors
+- Only focus on a single pixel, regardless of its neighbours, may lead to some errors
 
 ---
 
@@ -97,17 +97,12 @@ Often built on edge detectors (like Canny) plus contour finding.
 **Strengths**
 
 - Focuses on **object boundaries**
-- Useful when you care about shapes more than filled regions
+- Useful when you care about shapes more than internal features of the sample
 
 **Weaknesses**
 
 - Very sensitive to noise
-- May produce many small or broken contours if the image is complex
-
-**Good for**
-
-- Shape analysis
-- Measuring object boundaries, perimeters, etc.
+- Unable to process complex images, may produce many small or broken contours
 
 ---
 
@@ -119,20 +114,13 @@ Often built on edge detectors (like Canny) plus contour finding.
 
 **Strengths**
 
-- Good at separating **touching or overlapping objects**  
-  (e.g. clustered cells or particles)
+- Good at separating objects that stick together (e.g. cells, particles, and coins pressed together)
 - Can produce detailed boundaries
 
 **Weaknesses**
 
-- Very sensitive to noise and over-segmentation
-- Usually needs good preprocessing (smoothing, markers, etc.)
-
-**Good for**
-
-- Microscopy images with touching objects
-- Cases where simple thresholding merges objects together
-
+- May draw boundaries everywhere because of noise.
+- Sometimes even there are no edges, it can draw a line between two sections to separate the two areas.
 
 ---
 
