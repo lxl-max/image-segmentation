@@ -118,7 +118,7 @@ class WatershedSegmentation(object):
         # Marker labelling
         _, markers = cv2.connectedComponents(sure_fg)
 
-        # # Add one to all labels so that sure background is not 0, but 1
+        # Add one to all labels so that sure background is not 0, but 1
         markers = markers + 1
 
         # Now, mark the region of unknown with zero
@@ -182,3 +182,4 @@ if __name__ == "__main__":
     # Input the path of the figure here
     image_path = r"input the path of the figure"
     process_image(image_path)
+
