@@ -20,7 +20,7 @@ Install with `pip install numpy matplotlib opencv-contrib-python`
 5. Get results
 
 ## Example screenshoots or figures 
-Using K-means clustering as an example: 
+Using K-means clustering with k=3 as an example: 
 
 <img width="270" height="534" alt="image" src="https://github.com/user-attachments/assets/dbaa2be1-a462-4dea-85ee-0c93eb5c3e79" />
 <img width="342" height="554" alt="image" src="https://github.com/user-attachments/assets/942e70c9-3020-4cc1-8829-f03d465aabd7" />
