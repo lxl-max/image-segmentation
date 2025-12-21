@@ -36,7 +36,7 @@ git clone https://github.com/lxl-max/image-segmentation/tree/main/src
 ```bash
   pip install -r requirements.txt
 ```
-3. Run, you can
+3. Run
 
 4. Choose ROIs, enter "space" to confirm, enter "Esc" to exit
 
