@@ -7,7 +7,9 @@ This repository contains a collection of image segmentation algorithms implement
 Implement four classical segmentation algorithums: [`Otsu Thresholding`](https://github.com/lxl-max/image-segmentation/blob/main/src/Otsu_Thresholding.py), [`K-Means Clustering`](https://github.com/lxl-max/image-segmentation/blob/main/src/KMeans_Clustering.py), [`Contour Detection`](https://github.com/lxl-max/image-segmentation/blob/main/src/Otsu_Thresholding.py), and [`Watershed Segmentation`](https://github.com/lxl-max/image-segmentation/blob/main/src/Watershed_Segmentation_with_markers.py). 
 Using these algorithums, user can select a Region of Interest (ROI) or multiple ROIs of a sample image by drawing a rectangle with the mouse on the image. 
 
-Users may choose to run a single segmentation algorithm, or utilise [`run_segmentations`](https://github.com/lxl-max/image-segmentation/blob/main/src/run_segmentations.py) to execute all segmentation algorithms at once.
+User may choose to run a single segmentation algorithm, or utilise [`run_segmentations`](https://github.com/lxl-max/image-segmentation/blob/main/src/run_segmentations.py) to execute all segmentation algorithms at once. 
+
+User also can operatre [`run_compare`](https://github.com/lxl-max/image-segmentation/blob/main/src/run_compare.py) to evaluate the segmentation capabilities of different segmentation methods. 
 
 ## Segmentation Algorithms
 
