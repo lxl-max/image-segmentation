@@ -123,7 +123,7 @@ Often built on edge detectors (like Canny) plus contour finding.
 
   ### 1. Otsu Thresholding
 
-Our goal is to maximise between-class variance
+The goal is to maximise between-class variance. 
 
 $$
 \sigma_B^2 = P_1 (m_1 - m_G)^2 + P_2 (m_2 - m_G)^2
@@ -150,19 +150,30 @@ Also, $k$ is the threshold between Class 1 and Class 2, which is what we wish to
 
 ### 2. K-Means Clustering
 
-> Treat each pixel as a point (e.g. in color space), and automatically group these points into **K clusters**. Each cluster corresponds to a region in the image.
+K-means algorithm is an iterative procedure that successively refines the means until convergence is achieved. The criterion is: 
 
-You choose the number of clusters **K** (e.g. 2, 3, 4…). 
+$$
+\arg\min_{C} \left( \sum_{i=1}^{k} \sum_{z \in C_i} \lVert z - m_i \rVert^{2} \right)
+$$
 
-**Strengths**
+where $z$ is the set of vector observations, $m_i$ is the mean vector of the samples in set $C_i$, $\lVert arg \rVert$ is the vector norm of the argument, and $C$ is the cluster sets. Typically, the Euclidean norm is used, so the term $\lVert z - m_i \rVert$ is the familiar Euclidean distance from a sample in $C_i$ to mean $m_i$. This equation says we are interested in finding the sets $C$ such that the sum of the distances from each point in a set to the mean of that set is minimum. 
 
-- Can handle sample with multiple objects
-- Works well for color images where different regions have different colors
+1. Set an initial set of means $m_i$.
+2. Assign each sample to the cluster set whose mean is the closest:
 
-**Weaknesses**
+$$
+z \to C_i \quad \text{if} \quad \lVert z - m_i \rVert^2 < \lVert z - m_j \rVert^2
+$$
 
-- You must choose K manually
-- Only focus on a single pixel, regardless of its neighbours, may lead to some errors
+3. Update the means(cluster centers): 
+
+$$
+m_i = \frac{1}{|C_i|} \sum_{z \in C_i} z
+$$
+
+where $|C_i|$ is the number of samples in cluster in set $C_i$. 
+
+4. Compute the Euclidean norms of the differences between the mean vectors in the current and previous steps. Compute the residual error, $E$, as the sum of the $k$ norms. Stop if $E\leqslant T$ , where $T$ a specified, nonnegative threshold. Else, go back to Step 2. 
 
 ---
 
