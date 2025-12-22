@@ -179,19 +179,44 @@ where $|C_i|$ is the number of samples in cluster in set $C_i$.
 
 ### 3. Contour Detection
 
-> First detect “edges” where the image intensity changes quickly, then connect these edges into contours.
+We find contours, which are enclosed large outline, from Canndy Edge Detection. 
 
-Often built on edge detectors (like Canny) plus contour finding.
+#### Canndy Edge Detection
 
-**Strengths**
+1. Smoothing input image with a Gaussian filter: $f_s(x, y) = G(x, y) \star f(x, y)$, where $f_s(x, y)$ is the smoothed image, $f(x, y)$ is the input image and $G(x, y)$ is the Gaussian function: $G(x, y) = e^{-\frac{x^2 + y^2}{2\sigma^2}}$. 
+2. Compute the gradient magnitude and angle images, 
 
-- Focuses on **object boundaries**
-- Useful when you care about shapes more than internal features of the sample
+$$
+M_s(x, y) = \left\lVert \nabla f_s(x, y) \right\rVert
+           = \sqrt{g_x^2(x, y) + g_y^2(x, y)}
+$$
 
-**Weaknesses**
+$$
+\alpha(x, y) = \tan^{-1} \left[ \frac{g_y(x, y)}{g_x(x, y)} \right]
+$$
 
-- Very sensitive to noise
-- Unable to process complex images, may produce many small or broken contours
+with $g_x(x, y) = \frac{\partial f_s(x, y)}{\partial x}$ and $g_y(x, y) = \frac{\partial f_s(x, y)}{\partial y}$ and $g(x, y)$ are nonzero pixels. 
+
+
+3. Apply nonmaxima suppression: if the gradient magnitude at a point is not the maximum in that direction, set it to zero.
+4. Use double thresholding and connectivity analysis to detect and link edges: 
+
+$$
+T_H < g(x, y)
+$$
+
+$$
+T_L < g(x, y) < T_H
+$$
+
+Pixels satisfying the first equation are called strong edge pixels and those satisfying to second equation are called weak edge pixels.   
+
+
+
+
+
+
+
 
 ---
 
