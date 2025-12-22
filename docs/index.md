@@ -11,26 +11,20 @@ In short, it lets you:
 
 ### Who is this for?
 
-- Students who are starting to learn about image segmentation
-- Anyone who wants to **see what classical methods actually do** on real images
-- People who prefer a **simple, runnable demo** rather than only reading theory
-
-### Who is this *not* for?
-
-- Large-scale production systems
-- Deep learning–based segmentation (this project focuses on classical methods)
-
+1. Students who are starting to learn about image segmentation
+2. Anyone who wants to **see what classical methods actually do** on real images
+3. People who prefer a **simple, runnable demo** rather than only reading theory
 
 ---
 
 ## What’s in this repository?
 
-- `data/` – Example images (you can replace or add your own)
-- `src/` – Main source code
+1. `data/` – Example images (you can replace or add your own)
+2. `src/` – Main source code
   - ROI selection
   - Four classical image segmentation algorithms
   - Visualization and comparison of results
-- `docs/` – This documentation
+3. `docs/` – This documentation
 
 If you just want to **play with the demo**, you only need to:
 
@@ -40,7 +34,7 @@ If you just want to **play with the demo**, you only need to:
 
 ---
 
-## How to understand these algorithms?
+## How do these algorithms work?
 
 The project includes several classical segmentation methods, such as:
 
@@ -121,6 +115,102 @@ Often built on edge detectors (like Canny) plus contour finding.
 
 - May draw boundaries everywhere because of noise.
 - Sometimes even there are no edges, it can draw a line between two sections to separate the two areas.
+
+
+---
+
+## Advanced about these algorithms
+
+  ### 1. Otsu Thresholding
+
+Our goal is to maximise between-class variance
+
+$$
+\sigma_B^2 = P_1 (m_1 - m_G)^2 + P_2 (m_2 - m_G)^2
+$$
+
+where $\sigma_B^2$ is the between-class variance, $m_1 $, $m_2$, $m_G$ represent the mean of class 1, the mean of class 2, and the global mean respectively, $P_1$, $P_2$ represent the probabilities of class 1 and class2 occurring respectively. 
+
+$$
+m_1(k) = \frac{1}{P_1(k)} \sum_{i=0}^{k} i \cdot p_i,\quad
+m_2(k) = \frac{1}{P_2(k)} \sum_{i=k+1}^{255} i \cdot p_i,\quad
+m_G(k) = \sum_{i=0}^{255} i \cdot p_i
+$$
+
+$$
+P_1(k) = \sum_{i=0}^{k} p_i,\quad
+P_2(k) = \sum_{i=k+1}^{255} p_i = 1 - P_1(k)
+$$
+
+where $p_i = \frac{n_i}{M \cdot N}$ is the proportion of pixels with intensity $i $, $i $ and $i $
+
+
+
+
+
+3. `src/` – Main source code
+  - ROI selection
+  - Four classical image segmentation algorithms
+  - Visualization and comparison of results
+3. `docs/` – This documentation
+
+
+
+---
+
+### 2. K-Means Clustering
+
+> Treat each pixel as a point (e.g. in color space), and automatically group these points into **K clusters**. Each cluster corresponds to a region in the image.
+
+You choose the number of clusters **K** (e.g. 2, 3, 4…). 
+
+**Strengths**
+
+- Can handle sample with multiple objects
+- Works well for color images where different regions have different colors
+
+**Weaknesses**
+
+- You must choose K manually
+- Only focus on a single pixel, regardless of its neighbours, may lead to some errors
+
+---
+
+### 3. Contour Detection
+
+> First detect “edges” where the image intensity changes quickly, then connect these edges into contours.
+
+Often built on edge detectors (like Canny) plus contour finding.
+
+**Strengths**
+
+- Focuses on **object boundaries**
+- Useful when you care about shapes more than internal features of the sample
+
+**Weaknesses**
+
+- Very sensitive to noise
+- Unable to process complex images, may produce many small or broken contours
+
+---
+
+### 4. Watershed Segmentation
+
+
+> Imagine the grayscale image as a landscape: bright areas are “mountains”, dark areas are “valleys”.  
+> If you slowly “flood” this landscape with water, the lines where water from different valleys meet become the segmentation boundaries.
+
+**Strengths**
+
+- Good at separating objects that stick together (e.g. cells, particles, and coins pressed together)
+- Can produce detailed boundaries
+
+**Weaknesses**
+
+- May draw boundaries everywhere because of noise.
+- Sometimes even there are no edges, it can draw a line between two sections to separate the two areas.
+
+
 
 ---
 
