@@ -142,19 +142,9 @@ P_1(k) = \sum_{i=0}^{k} p_i,\quad
 P_2(k) = \sum_{i=k+1}^{255} p_i = 1 - P_1(k)
 $$
 
-where $p_i = \frac{n_i}{M \cdot N}$ is the proportion of pixels with intensity $i $, $i $ and $i $
+where $p_i = \frac{n_i}{M \cdot N}$ is the proportion of pixels with intensity $i$, $n_i$ is the number of these pixels and $M* N$ represent the total number of pixels. 
 
-
-
-
-
-3. `src/` – Main source code
-  - ROI selection
-  - Four classical image segmentation algorithms
-  - Visualization and comparison of results
-3. `docs/` – This documentation
-
-
+Also, $k$ is the threshold between Class 1 and Class 2, which is what we wish to obtain. 
 
 ---
 
