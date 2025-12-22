@@ -20,7 +20,6 @@ The following segmentation algorithms are included:
 3. **Contour Detection**: Implemented using OpenCV.
 4. **Watershed Segmentation**: Implemented using OpenCV.
 
-Each algorithm is implemented in a separate Python file for better organization.
 
 ## Usage
 
