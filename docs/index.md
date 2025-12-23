@@ -223,19 +223,15 @@ Upon completion of Canndy detection process, we perform a **dilate** operation. 
 
 ### 4. Watershed Segmentation
 
+Watershed Segmentation is based on regional expansion and conflict resolution algorithm. It needs discrete, clean foreground and background structure. So we can use **Otsu** as the starting point. 
 
-> Imagine the grayscale image as a landscape: bright areas are “mountains”, dark areas are “valleys”.  
-> If you slowly “flood” this landscape with water, the lines where water from different valleys meet become the segmentation boundaries.
+1. Otsu operation. 
+2. Remove noise by first eroding and then dilating.
+3. Sure background by dilating.
+4. Sure foreground by distancetransform: 
+5. Finding unknown region by subtracting the foreground from the background.
+6. Marker labeling
 
-**Strengths**
-
-- Good at separating objects that stick together (e.g. cells, particles, and coins pressed together)
-- Can produce detailed boundaries
-
-**Weaknesses**
-
-- May draw boundaries everywhere because of noise.
-- Sometimes even there are no edges, it can draw a line between two sections to separate the two areas.
 
 
 
