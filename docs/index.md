@@ -211,12 +211,13 @@ $$
 
 Pixels satisfying the first equation are called strong edge pixels and those satisfying to second equation are called weak edge pixels.   
 
+Upon completion of Canndy detection process, we perform a **dilate** operation. This thickens the edges and makes the contours more consistent, thereby more convenient for contour detection. 
 
+#### Find Contour
 
-
-
-
-
+1. Locate the foreground connected components, get $C_1$, $C_2$, ..., $C_n$, each is an independent region.
+2. Perform contour tracking for each $C_i$: starting from a boundary pixel, walk around the perimeter of the neighbourhood, record the pixels in sequence. The result is an ordered, connected outline.​
+3. Pick the largest one. 
 
 ---
 
