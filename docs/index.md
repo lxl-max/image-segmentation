@@ -116,7 +116,6 @@ Often built on edge detectors (like Canny) plus contour finding.
 - May draw boundaries everywhere because of noise.
 - Sometimes even there are no edges, it can draw a line between two sections to separate the two areas.
 
-
 ---
 
 ## Advanced about these algorithms
@@ -238,7 +237,11 @@ where $x_1$ and $y_1$ belongs to the foreground, $x_2$ and $y_2$ belongs to the 
 
 6. Finding unknown region by subtracting the foreground from the background. 
 7. Marker labeling: assign an integer label to each connected region.
-8. Watershed process: begin with the label of unknown is 0, if their neighbours have multiple different kinds of labels, then set this pixel to -1. All of these pixels form the watershed line.  
+8. Watershed process: begin with the label of unknown is 0, if their neighbours have multiple different kinds of labels, then set this pixel to -1. All of these pixels form the watershed line.
+
+### Assessment
+
+
 
 ---
 
