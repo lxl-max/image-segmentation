@@ -99,19 +99,17 @@ A contour is a continuous, ordered, and connected sequence of boundary pixels. C
 
 ### 4. Watershed Segmentation
 
+Imagine the whole grayscale image as a landscape: bright areas are “mountains”, dark areas are “valleys”. Watershed segmentation means slowly “flood” this landscape with water, the lines where water from different valleys meet become the segmentation boundaries. 
 
-> Imagine the grayscale image as a landscape: bright areas are “mountains”, dark areas are “valleys”.  
-> If you slowly “flood” this landscape with water, the lines where water from different valleys meet become the segmentation boundaries.
+#### Pros
 
-**Strengths**
+1. Good at separating objects that stick together (e.g. cells, particles, and coins pressed together)
+2. Can produce detailed boundaries
 
-- Good at separating objects that stick together (e.g. cells, particles, and coins pressed together)
-- Can produce detailed boundaries
+#### Cons
 
-**Weaknesses**
-
-- May draw boundaries everywhere because of noise.
-- Sometimes even there are no edges, it can draw a line between two sections to separate the two areas.
+1. May draw boundaries everywhere because of noise.
+2. Sometimes even there are no edges, it can draw a line between two sections to separate the two areas.
 
 ---
 
