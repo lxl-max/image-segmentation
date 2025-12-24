@@ -46,7 +46,7 @@ The project includes several classical segmentation methods, such as:
 ---
 ### 1. Otsu Thresholding
 
-The goal is to find the threshold and achieved based on the total intensity of pixels. 
+The goal is to find the **threshold** and achieved based on the total intensity of pixels. 
 Then partitioning all pixels into two segments to finish segmentation: 
 
 1. Foreground: pixels **brighter** than the threshold
@@ -67,8 +67,7 @@ Then partitioning all pixels into two segments to finish segmentation:
 
 ### 2. K-Means Clustering
 
-**Clusters** is a set that contains pixels with some specific features, **means** is the representative of each cluster that determine if the pixel belong to that cluster, **K** is the number of the cluster and we can determine its value as required. 
-It's like picking out the apples, pears and bananas from a pile of fruits to segment.
+**Clusters** is a set that contains pixels with some specific features, **means** is the representative of each cluster that determine if the pixel belong to that cluster, **K** is the number of the cluster and we can determine its value as required. It's like picking out the apples, pears and bananas from a pile of fruits to segment.
 
 #### Pros
 
@@ -84,19 +83,17 @@ It's like picking out the apples, pears and bananas from a pile of fruits to seg
 
 ### 3. Contour Detection
 
-> First detect “edges” where the image intensity changes quickly, then connect these edges into contours.
+A contour is a continuous, ordered, and connected sequence of boundary pixels. Contour detection is based on edge detection. But if we use edge detection, we need to convert the image into binary image so that the detection results directly correspond to the boundary. After operating edge tection, we connect boundary pixels to get contours.
 
-Often built on edge detectors (like Canny) plus contour finding.
+#### Pros
 
-**Strengths**
+1. Focuses on **object boundaries**
+2. Useful when you care about shapes more than internal features of the sample
 
-- Focuses on **object boundaries**
-- Useful when you care about shapes more than internal features of the sample
+#### Cons
 
-**Weaknesses**
-
-- Very sensitive to noise
-- Unable to process complex images, may produce many small or broken contours
+1. Very sensitive to noise
+2. Unable to process complex images, may produce many small or broken contours
 
 ---
 
