@@ -173,9 +173,9 @@ where $|C_i|$ is the number of samples in cluster in set $C_i$.
 
 ### 3. Contour Detection
 
-We find contours, which are enclosed large outline, from Canndy Edge Detection. 
+We find contours, which are enclosed large outline, from Canny Edge Detection. 
 
-#### Canndy Edge Detection
+#### Canny Edge Detection
 
 1. Smoothing input image with a Gaussian filter: $f_s(x, y) = G(x, y) \star f(x, y)$, where $f_s(x, y)$ is the smoothed image, $f(x, y)$ is the input image and $G(x, y)$ is the Gaussian function: $G(x, y) = e^{-\frac{x^2 + y^2}{2\sigma^2}}$. 
 2. Compute the gradient magnitude and angle images, 
@@ -205,7 +205,7 @@ $$
 
 Pixels satisfying the first equation are called strong edge pixels and those satisfying to second equation are called weak edge pixels.   
 
-Upon completion of Canndy detection process, we perform a **dilate** operation. This thickens the edges and makes the contours more consistent, thereby more convenient for contour detection. 
+Upon completion of Canny detection process, we perform a **dilate** operation. This thickens the edges and makes the contours more consistent, thereby more convenient for contour detection. 
 
 #### Find Contour
 
