@@ -43,9 +43,10 @@ git clone https://github.com/lxl-max/image-segmentation/tree/main/src
 
 ## Results 
 
-<img width="1538" height="546" alt="1" src="https://github.com/user-attachments/assets/435f6504-0bcf-4e96-bb23-5df50fe42490" />
-<img width="1823" height="471" alt="2" src="https://github.com/user-attachments/assets/0f32221b-b417-46d8-85f5-e0c668baa831" />
-<img width="1838" height="467" alt="3" src="https://github.com/user-attachments/assets/eaae0040-dba9-44f0-ac2a-28ee327f5415" />
+<img width="1827" height="645" alt="image" src="https://github.com/user-attachments/assets/7ea4e8ad-d86c-4c9f-8819-26751e5409de" />
+<img width="1822" height="521" alt="image" src="https://github.com/user-attachments/assets/8d55f693-82ed-446d-a239-4be8dfc90548" />
+<img width="1838" height="490" alt="image" src="https://github.com/user-attachments/assets/8da1c7ae-75b6-4fad-9efc-d44c4534afbf" />
+
 
 
 ## References
