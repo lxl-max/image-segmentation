@@ -241,7 +241,29 @@ where $x_1$ and $y_1$ belongs to the foreground, $x_2$ and $y_2$ belongs to the 
 
 ### Assessment
 
+#### 1. Precision
 
+$$
+P = \frac{\lvert B \cap A^t \rvert}{\lvert B \rvert}
+$$
+
+$A$ is reference boundary (original Canny edge), $B$ is predicted boundary (segmentation boundary), $A^t$ is boundary band obtained by dilating A by tol and tol is a buferr error allowed. Precision represent among the boundary pixels $B$ drawn by the segmentation method, the number of pixels lie near the reference boundary. 
+
+#### 2. Recall
+
+$$
+P = \frac{\lvert A \cap B^t \rvert}{\lvert A \rvert}
+$$
+
+Recall represent among the boundary pixels $A$ obtained by reference method, the number of pixels lie near the predicated boundary.  
+
+#### 3. BF-F1
+
+$$
+F_1 = \frac{2PR}{P + R}
+$$
+
+BF-F1 is the harmonic mean of P and R, it used to measure the overall performance of boundary alignment.  
 
 ---
 
