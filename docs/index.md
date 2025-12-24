@@ -46,39 +46,39 @@ The project includes several classical segmentation methods, such as:
 ---
 ### 1. Otsu Thresholding
 
-> We extract the brightness values of every pixel in an image, then plot a histogram. and tries to find one “best” brightness threshold that separates foreground and background.
+The goal is to find the threshold and achieved based on the total intensity of pixels. 
+Then partitioning all pixels into two segments to finish segmentation: 
 
-- Pixels **brighter** than the threshold → foreground
-- Pixels **darker** than the threshold → background
+1. Foreground: pixels **brighter** than the threshold
+2. Background: pixels **darker** than the threshold
 
-**Strengths**
+#### Pros
 
-- Very simple and fast
-- Works well when the sample consists of a single object and background
+1. Very simple and fast
+2. Works well when the sample consists of a single object and background
 
-**Weaknesses**
+#### Cons
 
-- Works poor when the sample consists of two or more objects because of relying on brightness only
-- Only suitable for gray scale image
-- Easily affected by lighting
+1. Works poor when the sample consists of two or more objects because of relying on brightness only
+2. Only suitable for gray scale image
+3. Easily affected by lighting
 
 ---
 
 ### 2. K-Means Clustering
 
-> Treat each pixel as a point (e.g. in color space), and automatically group these points into **K clusters**. Each cluster corresponds to a region in the image.
+**Clusters** is a set that contains pixels with some specific features, **means** is the representative of each cluster that determine if the pixel belong to that cluster, **K** is the number of the cluster and we can determine its value as required. 
+It's like picking out the apples, pears and bananas from a pile of fruits to segment.
 
-You choose the number of clusters **K** (e.g. 2, 3, 4…). 
+#### Pros
 
-**Strengths**
+1. Can handle sample with multiple objects
+2. Works well for color images where different regions have different colors
 
-- Can handle sample with multiple objects
-- Works well for color images where different regions have different colors
+#### Cons
 
-**Weaknesses**
-
-- You must choose K manually
-- Only focus on a single pixel, regardless of its neighbours, may lead to some errors
+1. You must choose K manually
+2. Only focus on a single pixel, regardless of its neighbours, may lead to some errors
 
 ---
 
