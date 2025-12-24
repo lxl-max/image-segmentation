@@ -35,11 +35,13 @@ git clone https://github.com/lxl-max/image-segmentation/tree/main/src
 ```bash
   pip install -r requirements.txt
 ```
-3. Run
+3. Input the path of the sample **manually**.
 
-4. Choose ROIs, enter "space" to confirm, enter "Esc" to exit
+4. Run
 
-5. Get results
+5. Choose ROIs, enter "space" to confirm, enter "Esc" to exit
+
+6. Get results
 
 ## Results 
 
