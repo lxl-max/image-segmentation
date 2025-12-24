@@ -239,6 +239,8 @@ where $x_1$ and $y_1$ belongs to the foreground, $x_2$ and $y_2$ belongs to the 
 7. Marker labeling: assign an integer label to each connected region.
 8. Watershed process: begin with the label of unknown is 0, if their neighbours have multiple different kinds of labels, then set this pixel to -1. All of these pixels form the watershed line.
 
+---
+
 ### Assessment
 
 #### 1. Precision
