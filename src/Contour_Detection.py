@@ -66,7 +66,7 @@ def show_image(
 class ContourDetection(object):
     """：
     1) Convert to greyscale
-    2) Apply thresholding using mean(greyscale) with THRESH_BINARY_INV
+    2) Apply thresholding using mean(greyscale) with THRESH_BINARY
     3) Apply Canny edge detection followed by dilation
     4) Identify the largest contour
     5) Fill the contour onto the empty mask
@@ -92,7 +92,7 @@ class ContourDetection(object):
         # Thresholding and edge detection
         t0 = time.perf_counter()
         _, thresh = cv2.threshold(
-            gray_img, np.mean(gray_img), 255, cv2.THRESH_BINARY_INV
+            gray_img, np.mean(gray_img), 255, cv2.THRESH_BINARY
         )
         edges = cv2.dilate(cv2.Canny(thresh, 0, 255), None)
 
@@ -156,3 +156,4 @@ if __name__ == "__main__":
     # Input the path of the figure here
     image_path = r"input the image path"
     process_image(image_path)
+
