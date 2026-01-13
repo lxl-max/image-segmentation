@@ -83,7 +83,7 @@ Then partitioning all pixels into two segments to finish segmentation:
 
 ### 3. Contour Detection
 
-A contour is a continuous, ordered, and connected sequence of boundary pixels. Contour detection is based on edge detection. But if we use edge detection, we need to convert the image into binary image so that the detection results directly correspond to the boundary. After operating edge tection, we connect boundary pixels to get contours.
+A contour is a continuous, ordered, and connected sequence of boundary pixels. Contour detection is based on edge detection. But if we use edge detection, we need to convert the image into binary image so that the detection results directly correspond to the boundary. After operating edge detection, we connect boundary pixels to get contours.
 
 #### Pros
 
