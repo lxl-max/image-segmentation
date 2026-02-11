@@ -234,10 +234,10 @@ where $x_1$ and $y_1$ belongs to the foreground, $x_2$ and $y_2$ belongs to the 
 #### Recall
 
 $$
-P = \frac{\lvert A \cap B^t \rvert}{\lvert A \rvert}
+P = \frac{B}{A}
 $$
 
-$A$ is reference boundary (original Canny edge), $B$ is predicted boundary (segmentation boundary), $A^t$ is boundary band obtained by dilating A by tol and tol is a buferr error allowed. Recall represent among the boundary pixels $A$ obtained by reference method, the number of pixels lie near the predicated boundary.  
+$A$ is predicted region (segmentation region), $B$ is overlapping region between ground truth and predicted region. Recall represent among the region $A$ obtained by reference method, the number of pixels lie near the ground truth.  
 
 ---
 
