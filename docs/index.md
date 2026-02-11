@@ -19,18 +19,12 @@ In short, it lets you:
 
 ## What’s in this repository?
 
-1. `data/` – Example images (you can replace or add your own)
+1. `data/` – A example image and its ground truth
 2. `src/` – Main source code
   - ROI selection
   - Four classical image segmentation algorithms
   - Visualization and comparison of results
 3. `docs/` – This documentation
-
-If you just want to **play with the demo**, you only need to:
-
-1. Install the Python dependencies  
-2. Run the entry script  
-3. Use your mouse to draw a ROI, press **Space** to confirm, **Esc** to exit  
 
 ---
 
