@@ -65,12 +65,8 @@ def show_image(
 # K-Means color clustering segmentation.
 class KMeansClustering(object):
     """
-    Example
-    -------
-    segmenter = KMeansSegmentation(k=3, attempts=10)
-    seg_img, elapsed = segmenter.apply(image)
-
-    The input is assumed to be an RGB image (H, W, 3) as a NumPy array.
+    K-Means segmentation based on grayscale intensity.
+    Each pixel is represented as a 1D feature: [intensity].
     """
 
     def __init__(
@@ -80,18 +76,6 @@ class KMeansClustering(object):
         max_iter: int = 10,
         epsilon: float = 1.0,
     ):
-        """
-        Parameters
-        ----------
-        k : int
-            Number of clusters.
-        attempts : int
-            Number of times K-Means is executed using different initial labellings.
-        max_iter : int
-            Maximum number of iterations for K-Means.
-        epsilon : float
-            Required accuracy.
-        """
         self.k = k
         self.attempts = attempts
         self.criteria = (
@@ -111,13 +95,18 @@ class KMeansClustering(object):
         Returns
         -------
         segmented : np.ndarray
-            Segmented RGB image (each pixel replaced by its cluster center color).
+            Segmented mask (grayscale), each pixel replaced by its cluster label.
         elapsed : float
             Execution time in seconds.
         """
-        # Reshape to 2D
-        two_d_image = image.reshape((-1, 3))
-        two_d_image = np.float32(two_d_image)
+        # Convert to grayscale --------------------------------------------
+        if image.ndim == 3:
+            gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+        else:
+            gray = image
+
+        # Flatten into 1D feature vector for K-means
+        two_d_image = gray.reshape((-1, 1)).astype(np.float32)
 
         # Same criteria and parameters pattern
         t0 = time.perf_counter()
@@ -180,4 +169,5 @@ if __name__ == "__main__":
 
     # Input the path of the figure here
     image_path = r"input the image path"
+
     process_image(image_path)
